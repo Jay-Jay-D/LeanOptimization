@@ -1,8 +1,8 @@
 ﻿/*
- * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,19 +15,18 @@ using QuantConnect.Algorithm;
 using QuantConnect.Configuration;
 using QuantConnect.Data.Market;
 using QuantConnect.Indicators;
-using QuantConnect.Parameters;
 
 namespace Optimization.Example
 {
     public class ParameterizedAlgorithm : QCAlgorithm
     {
-
+        private readonly decimal stopLoss = Config.GetValue("stop", 0.2m);
+        private readonly decimal takeProfit = Config.GetValue("take", 0.1m);
+        public ExponentialMovingAverage Fast;
         public int FastPeriod = Config.GetInt("fast", 13);
+        public ExponentialMovingAverage Slow;
 
         public int SlowPeriod = Config.GetInt("slow", 56);
-
-        public ExponentialMovingAverage Fast;
-        public ExponentialMovingAverage Slow;
 
         public override void Initialize()
         {
@@ -46,15 +45,18 @@ namespace Optimization.Example
             // wait for our indicators to ready
             if (!Fast.IsReady || !Slow.IsReady) return;
 
-            if (Fast > Slow * 1.001m)
+            if (!Portfolio["SPY"].HoldStock)
             {
-                SetHoldings("SPY", 1);
+                if (Fast > Slow * 1.001m)
+                {
+                    SetHoldings("SPY", 1);
+                }
             }
-            else if (Portfolio["SPY"].HoldStock && Portfolio["SPY"].UnrealizedProfitPercent > Config.GetValue<decimal>("take", 0.2m))
+            else if (Portfolio["SPY"].UnrealizedProfitPercent > takeProfit ||
+                     Portfolio["SPY"].UnrealizedProfitPercent < stopLoss)
             {
                 Liquidate("SPY");
             }
-
         }
     }
 }

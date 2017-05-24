@@ -1,22 +1,144 @@
 {
   "genes": [
     {
-      "key": "take",
-      "min": 0.02,
-      "max": 0.1,
-      "precision": 2
+      "key": "EntryIndicator1",
+      "min": 0,
+      "max": 7
     },
     {
-      "key": "fast",
-      "min": 6,
-      "max": 48,
-      "precision": 0,
-      "actual": 13
+      "key": "EntryIndicator2",
+      "min": 0,
+      "max": 7
     },
     {
-      "key": "slow",
-      "min": 48,
-      "max": 500,
+      "key": "EntryIndicator3",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "EntryIndicator4",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "EntryIndicator5",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "EntryIndicator1Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryIndicator2Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryIndicator3Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryIndicator4Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryIndicator5Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryOperator1",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryOperator2",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryOperator3",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "EntryOperator4",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitIndicator1",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "ExitIndicator2",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "ExitIndicator3",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "ExitIndicator4",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "ExitIndicator5",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "key": "ExitIndicator1Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitIndicator2Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitIndicator3Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitIndicator4Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitIndicator5Direction",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitOperator1",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitOperator2",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitOperator3",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "key": "ExitOperator4",
+      "min": 0,
+      "max": 1
     }
   ],
   "populationSize": 24,
@@ -24,12 +146,12 @@
   "generations": 1000,
   "stagnationGenerations": 30,
   "maxThreads": 8,
-  "configPath": "../../../../Lean/Launcher/config.json",
-  "algorithmTypeName": "ParameterizedAlgorithm",
-  "algorithmLocation": "../../../Optimization.Example/bin/debug/Optimization.Example.dll",
+  "configPath": "../../../../LeanSTP/Launcher/config.json",
+  "algorithmTypeName": "TradingStrategiesBasedOnGeneticAlgorithms",
+  "algorithmLocation": "D:/REPOS/LeanSTP/Algorithm.CSharp/bin/Release/QuantConnect.Algorithm.CSharp.dll",
   "onePointCrossover": "true",
   "fitnessTypeName": "Optimization.OptimizerFitness",
-  "dataFolder": "../../../../Lean/Data",
+  "dataFolder": "../../../../../AlgorithmicTrading/DATA/ForexQuotes"
   //"mutationProbability": 0.5,
   //"crossoverProbability": 0.75
   //"fitnessTypeName": "Optimization.ConfiguredFitness",

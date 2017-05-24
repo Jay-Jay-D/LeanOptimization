@@ -54,6 +54,10 @@
       <HintPath>..\packages\Accord.Statistics.3.3.0\lib\net45\Accord.Statistics.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DynamicExpresso.Core, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicExpresso.Core.1.3.3.5\lib\net40\DynamicExpresso.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GeneticSharp.Domain, Version=1.0.5894.2743, Culture=neutral, PublicKeyToken=d63d2a65268366c6, processorArchitecture=MSIL">
       <HintPath>..\packages\GeneticSharp.1.0.100\lib\net35\GeneticSharp.Domain.dll</HintPath>
       <Private>True</Private>
@@ -86,41 +90,41 @@
       <HintPath>..\packages\NLog.4.4.5\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="QuantConnect.Algorithm, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Algorithm, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Algorithm.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Algorithm.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Api, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Api, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Api.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Api.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Common, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Common, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Common.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Common.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Configuration, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Configuration, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Configuration.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Indicators, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Indicators, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Indicators.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Indicators.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Lean.Engine, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Lean.Engine, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Lean.Engine.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Lean.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Logging, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Logging, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Logging.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Messaging, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Messaging, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Messaging.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Messaging.dll</HintPath>
     </Reference>
-    <Reference Include="QuantConnect.Queues, Version=2.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantConnect.Queues, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lean\Launcher\bin\Debug\QuantConnect.Queues.dll</HintPath>
+      <HintPath>..\..\LeanSTP\Launcher\bin\Release\QuantConnect.Queues.dll</HintPath>
     </Reference>
     <Reference Include="SmartThreadPool, Version=2.2.3.0, Culture=neutral, PublicKeyToken=1126fe8b671e8a79, processorArchitecture=MSIL">
       <HintPath>..\packages\SmartThreadPool.dll.2.2.3\lib\SmartThreadPool.dll</HintPath>

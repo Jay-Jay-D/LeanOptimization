@@ -76,36 +76,37 @@ namespace Optimization
             var systemHandlers = LeanEngineSystemHandlers.FromConfiguration(Composer.Instance);
             systemHandlers.Initialize();
 
-            Log.LogHandler = Composer.Instance.GetExportedValueByTypeName<ILogHandler>(Config.Get("log-handler", "CompositeLogHandler"));
-            //Log.DebuggingEnabled = false;
-            //Log.DebuggingLevel = 1;
+            var logFileName = "log_" + Guid.NewGuid().ToString() + ".txt";
+            var logHandlers = new ILogHandler[] { new FileLogHandler(logFileName, true) };
 
-            LeanEngineAlgorithmHandlers leanEngineAlgorithmHandlers;
-            try
+            using (Log.LogHandler = new CompositeLogHandler(logHandlers))
             {
-                leanEngineAlgorithmHandlers = LeanEngineAlgorithmHandlers.FromConfiguration(Composer.Instance);
-                _resultsHandler = (BacktestingResultHandler)leanEngineAlgorithmHandlers.Results;
-            }
-            catch (CompositionException compositionException)
-            {
-                Log.Error("Engine.Main(): Failed to load library: " + compositionException);
-                throw;
-            }
-            string algorithmPath;
-            AlgorithmNodePacket job = systemHandlers.JobQueue.NextJob(out algorithmPath);
-            try
-            {
-                var _engine = new Engine(systemHandlers, leanEngineAlgorithmHandlers, Config.GetBool("live-mode"));
-                _engine.Run(job, algorithmPath);
-            }
-            finally
-            {
-                Log.Trace("Engine.Main(): Packet removed from queue: " + job.AlgorithmId);
+                LeanEngineAlgorithmHandlers leanEngineAlgorithmHandlers;
+                try
+                {
+                    leanEngineAlgorithmHandlers = LeanEngineAlgorithmHandlers.FromConfiguration(Composer.Instance);
+                    _resultsHandler = (BacktestingResultHandler)leanEngineAlgorithmHandlers.Results;
+                }
+                catch (CompositionException compositionException)
+                {
+                    Log.Error("Engine.Main(): Failed to load library: " + compositionException);
+                    throw;
+                }
+                string algorithmPath;
+                AlgorithmNodePacket job = systemHandlers.JobQueue.NextJob(out algorithmPath);
+                try
+                {
+                    var _engine = new Engine(systemHandlers, leanEngineAlgorithmHandlers, Config.GetBool("live-mode"));
+                    _engine.Run(job, algorithmPath);
+                }
+                finally
+                {
+                    Log.Trace("Engine.Main(): Packet removed from queue: " + job.AlgorithmId);
 
-                // clean up resources
-                systemHandlers.Dispose();
-                leanEngineAlgorithmHandlers.Dispose();
-                Log.LogHandler.Dispose();
+                    // clean up resources
+                    systemHandlers.Dispose();
+                    leanEngineAlgorithmHandlers.Dispose();
+                }
             }
         }
 
